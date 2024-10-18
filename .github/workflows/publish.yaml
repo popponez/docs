@@ -40,11 +40,11 @@ jobs:
 
           git fetch origin gh-pages --depth=1 || true
 
-          uv run mike set-default ciao
-
           uv run mike deploy \
             --update-aliases \
             ciao xxx
+
+          uv run mike set-default ciao
 
           git push origin gh-pages
 
