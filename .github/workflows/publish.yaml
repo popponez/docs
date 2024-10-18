@@ -41,7 +41,10 @@ jobs:
           touch src/idp_docs/__init__.py
 
           uv run \
-            mkdocs deploy --update-aliases
+            mike deploy \
+              --update-aliases \
+              --push \
+              ciao xxx
 
           # /sh
 
