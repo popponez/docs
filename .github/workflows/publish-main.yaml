@@ -12,6 +12,6 @@ on:
 jobs:
 
   publish:
-    uses: ./.github/workflows/lib/publish.yaml
+    uses: ./.github/workflows/workflow-publish.yaml
     with:
       version: current

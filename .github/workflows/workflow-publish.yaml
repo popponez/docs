@@ -1,0 +1,63 @@
+---
+
+name: reusable publis workflow
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+      alias:
+        required: false
+        default: ''
+        type: string
+
+jobs:
+
+  build:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          version: "latest"
+
+      - name: build
+        env:
+          VERSION: ${{ inputs.version }}
+          ALIAS: ${{ inputs.alias }}
+        run: |
+          # sh
+
+          set -x
+
+          mkdir -p src/idp_docs
+          touch src/idp_docs/__init__.py
+
+          git config --global user.name \
+            "$(git log --format='%an' $GITHUB_SHA -n1)"
+
+          git config --global user.email \
+            "$(git log --format='%ae' $GITHUB_SHA -n1)"
+
+          git fetch origin gh-pages --depth=1 || true
+
+          uv run mike deploy \
+            --update-aliases \
+            $VERSION $ALIAS
+
+          uv run mike set-default current
+
+          git push origin gh-pages
+
+          # /sh
