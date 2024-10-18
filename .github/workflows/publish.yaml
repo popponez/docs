@@ -22,16 +22,16 @@ jobs:
         with:
           version: "latest"
 
-      - name: brubru
-        shell: python
-        run: |
-          # python
+      # - name: brubru
+      #   shell: python
+      #   run: |
+      #     # python
 
-          import cane
+      #     import cane
 
-          a = '12'
+      #     a = '12'
 
-          # /python
+      #     # /python
 
       - name: build
         run: |
