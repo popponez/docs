@@ -8,10 +8,10 @@ on:
       version:
         required: true
         type: string
-      alias:
-        required: false
-        default: ''
-        type: string
+      # alias:
+      #   required: false
+      #   default: ''
+      #   type: string
 
 jobs:
 
@@ -33,7 +33,7 @@ jobs:
       - name: build
         env:
           VERSION: ${{ inputs.version }}
-          ALIAS: ${{ inputs.alias }}
+          # ALIAS: ${{ inputs.alias }}
         run: |
           # sh
 
