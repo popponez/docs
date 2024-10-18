@@ -12,10 +12,8 @@ on:
 jobs:
 
   publish:
+    uses: ./.github/workflows/workflow-publish.yaml
     permissions:
       contents: write
-
-    uses: ./.github/workflows/workflow-publish.yaml
     with:
       version: current
-      alias: current
