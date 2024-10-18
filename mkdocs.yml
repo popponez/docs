@@ -1,5 +1,5 @@
 site_name: zzz
-site_url:
+site_url: https://popponez.github.io/docs
 
 theme:
   name: material
@@ -43,3 +43,10 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - mike
+
+extra:
+  version:
+    provider: mike
