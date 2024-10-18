@@ -40,13 +40,13 @@ jobs:
 
           git fetch origin gh-pages --depth=1
 
-
           uv run mike set-default ciao
 
           uv run mike deploy \
             --update-aliases \
-            --push \
             ciao xxx
+
+          git push origin gh-pages
 
           # /sh
 
