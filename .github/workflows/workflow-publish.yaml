@@ -52,7 +52,7 @@ jobs:
 
           uv run mike deploy \
             --update-aliases \
-            $VERSION #$ALIAS
+            ${VERSION//\//-} #$ALIAS
 
           uv run mike set-default current
 

@@ -1,10 +1,13 @@
 ---
 
-name: tag a version
+name: publish a branch
+run-name: publish `${{ github.ref_name }}` branch
 
 on:
   push:
-    tags:
+    branches-ignore:
+      - main
+    tags-ignore:
       - '**'
 
 jobs:

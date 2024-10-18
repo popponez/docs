@@ -1,6 +1,6 @@
 ---
 
-name: publish current docs
+name: publish current
 
 on:
   push:
