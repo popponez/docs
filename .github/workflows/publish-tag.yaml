@@ -1,14 +1,16 @@
 ---
 
 name: tag a version
+run-name: publish `${{ github.ref_name }}` tag
 
 on:
   push:
+    branches-ignore:
+      - '!main'
     tags:
       - '**'
 
 jobs:
-
   publish:
     uses: ./.github/workflows/workflow-publish.yaml
     permissions:

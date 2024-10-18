@@ -10,7 +10,6 @@ on:
       - '**'
 
 jobs:
-
   publish:
     uses: ./.github/workflows/workflow-publish.yaml
     permissions:
