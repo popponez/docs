@@ -4,7 +4,8 @@ name: publish current docs
 
 on:
   push:
-    - tags
+    tags:
+      - '**'
 
 jobs:
 
