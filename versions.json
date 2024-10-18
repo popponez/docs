@@ -1,5 +1,10 @@
 [
   {
+    "version": "feature-zio",
+    "title": "feature-zio",
+    "aliases": []
+  },
+  {
     "version": "current",
     "title": "current",
     "aliases": []
