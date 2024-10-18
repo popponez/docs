@@ -18,3 +18,4 @@ jobs:
     uses: ./.github/workflows/workflow-publish.yaml
     with:
       version: current
+      alias: current
