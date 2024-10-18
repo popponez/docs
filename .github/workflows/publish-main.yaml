@@ -12,6 +12,9 @@ on:
 jobs:
 
   publish:
+    permissions:
+      contents: write
+
     uses: ./.github/workflows/workflow-publish.yaml
     with:
       version: current
