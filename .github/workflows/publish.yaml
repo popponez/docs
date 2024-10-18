@@ -37,11 +37,13 @@ jobs:
         run: |
           # sh
 
+          set -x
+
           mkdir -p src/idp_docs
           touch src/idp_docs/__init__.py
 
-          git config --global author.email "$(git log --format='%ae' $GITHUB_SHA -n1)"
-          git config --global author.name "$(git log --format='%an' $GITHUB_SHA -n1)"
+          git config --global user.email "$(git log --format='%ae' $GITHUB_SHA -n1)"
+          git config --global user.name "$(git log --format='%an' $GITHUB_SHA -n1)"
 
           uv run \
             mike deploy \
